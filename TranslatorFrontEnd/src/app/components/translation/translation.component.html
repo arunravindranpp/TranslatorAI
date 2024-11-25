@@ -1,6 +1,10 @@
 <p>Translation works!</p>
 <div>
   <textarea [(ngModel)]="inputText" placeholder="Enter text to translate"></textarea>
+  <br>
   <button (click)="translate()">Translate</button>
-  <p><strong>Translated Text:</strong> {{ translatedText }}</p>
+  
+  <p><strong>Translated Text:</strong></p>
+  <!-- Read-only textarea for displaying translated text -->
+  <textarea [value]="translatedText" readonly></textarea>
 </div>
