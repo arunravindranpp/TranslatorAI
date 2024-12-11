@@ -1,0 +1,57 @@
+<div *ngIf="!isLoggedIn" class="login-container">
+  <h2>Login</h2>
+  <!-- <input [(ngModel)]="username" placeholder="Enter your username" />
+  <button (click)="login()">Login</button> -->
+<app-impersonation></app-impersonation>
+
+</div>
+<div *ngIf="isLoggedIn" class="chat-container">
+  <div class="header">
+    <span class="username-display">Logged in as: <strong>{{ username }}</strong></span>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+  <!-- User List -->
+  <div class="user-list">
+    <h3>Users</h3>
+    <ul>
+      <li 
+        *ngFor="let user of users" 
+        (click)="selectUser(user)" 
+        [ngClass]="{'selected': user === selectedUser}"
+      >
+        {{ user }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Chat Window -->
+  <div *ngIf="selectedUser" class="chat-window">
+    <h5>Chat with {{ selectedUser }}</h5><br>
+    <div class="messages">
+      <ng-container *ngFor="let message of messages; let i = index">
+        <!-- Display Date Divider -->
+        <div *ngIf="shouldShowDateDivider(message.timestamp, i)" class="date-divider">
+          {{ message.timestamp | date:'fullDate' }}
+        </div>
+
+        <!-- Display Message -->
+        <div 
+          [class.left]="message.username === selectedUser" 
+          [class.right]="message.username !== selectedUser">
+          <div class="message-metadata">
+            <span class="timestamp">{{ message.timestamp | date:'shortTime' }}</span>
+          </div>
+          <div class="message-content">
+            <strong>{{ message.username }}</strong>: {{ message.content }}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Input Section -->
+    <div class="chat-input">
+      <input [(ngModel)]="message" placeholder="Type a message" (keydown.enter)="sendMessage()"/>
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

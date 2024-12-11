@@ -1,0 +1,162 @@
+.chat-container {
+  display: flex;
+  flex-direction: row; /* Arrange children horizontally */
+  gap: 20px;
+  height: 80vh;
+  /* margin: 0 auto; */
+  max-width: 1200px; /* Set a max-width for the container */
+}
+.chat-input {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+.chat-window {
+  width: 80%; /* Increase the width to occupy more space */
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* Add more padding for a spacious look */
+  box-sizing: border-box; /* Includes padding in width calculation */
+  background-color: #fdfdfd; /* Add a subtle background color */
+  border-radius: 8px; /* Add rounded corners */
+  border: 1px solid #ddd; /* Optional border for better visual separation */
+}
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  .messages .left {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+  }
+  
+  .messages .right {
+    align-self: flex-end;
+    background-color: #d1e7ff;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+  }
+  .login-container {
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .login-container button {
+    padding: 10px 20px;
+  }
+  
+
+  .user-list {
+    width: 40%; /* Occupies 25% of the container width */
+    border-right: 1px solid #ccc; /* Add a divider line */
+    padding: 10px;
+    box-sizing: border-box; /* Includes padding in width calculation */
+  }
+  
+  .user-list ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .user-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-list li:hover {
+    background-color: #e6e6e6;
+  }
+  .logout-button {
+    position: absolute; /* Place relative to the page */
+    top: 10px; /* 10px from the top of the screen */
+    right: 10px; /* 10px from the right of the screen */
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* Red button for logout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100; /* Ensure it stays on top of other elements */
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .username-display {
+    position: absolute; /* Place relative to the page */
+    top: 10px; /* 10px from the top of the screen */
+    right: 10px; /* 10px from the right of the screen */
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100; /* Ensure it stays on top of other elements */
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 100px; /* Add spacing between username and button */
+  }
+  
+  .logout-button:hover {
+    background-color: #d12f2f; /* Darker red on hover */
+  }
+  .selected {
+    background-color: #007bff; /* Blue background for selected user */
+    color: rgb(232, 113, 113); /* White text color */
+    font-weight: bold; /* Bold text */
+    transform: scale(1.05); /* Slightly enlarge the selected item */
+  }
+  .date-divider {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: gray;
+    font-weight: bold;
+  }
+  
+  .message-metadata {
+    font-size: 0.8em;
+    color: gray;
+    margin-bottom: 2px;
+  }
+  

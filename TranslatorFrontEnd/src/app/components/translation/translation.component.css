@@ -1,23 +1,23 @@
 /* translation.component.css */
 textarea {
-  width: 400px;  
-  height: 100px;
-  margin-bottom: 10px;
-  overflow-y: auto;  
-}
-  button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+    width: 400px;  
+    height: 100px;
+    margin-bottom: 10px;
+    overflow-y: auto;  
   }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  p {
-    margin-top: 20px;
-  }
-  
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+    
+    p {
+      margin-top: 20px;
+    }
+    

@@ -1,10 +1,13 @@
 import { Component,OnInit  } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-translation',
   templateUrl: './translation.component.html',
-  styleUrls: ['./translation.component.css']
+  styleUrls: ['./translation.component.css'],
+  standalone: true,
+  imports: [FormsModule] 
 })
 export class TranslationComponent implements OnInit {
   posts: any[] = [];
@@ -15,15 +18,15 @@ export class TranslationComponent implements OnInit {
   constructor(private translationService: TranslationService) {}
   
   ngOnInit(): void {
-    this.translationService.fetchPosts().subscribe({
-      next: (data) => {
-        this.posts = data;
-        console.log('Posts:', this.posts);
-      },
-      error: (error) => {
-        console.error('Error fetching posts:', error);
-      }
-    });
+    // this.translationService.fetchPosts().subscribe({
+    //   next: (data) => {
+    //     this.posts = data;
+    //     console.log('Posts:', this.posts);
+    //   },
+    //   error: (error) => {
+    //     console.error('Error fetching posts:', error);
+    //   }
+    // });
   }
   translate(): void {
     if (!this.inputText.trim()) {

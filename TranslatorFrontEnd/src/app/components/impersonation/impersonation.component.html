@@ -1,0 +1,58 @@
+<div class="container">
+  <h4>Impersonation</h4>
+  
+  <!-- Power Users -->
+  <div class="power-users">
+    <h5>Power users:</h5>
+    <div class="mb-2">Power users:</div>
+    <a class="user-link" (click)="impersonate('Michele.Austin@ey.com')">Michele.Austin&#64;ey.com</a>
+    <a class="user-link" (click)="impersonate('Bethany.Lineberry@ey.com')">Bethany.Lineberry&#64;ey.com</a>
+    <a class="user-link" (click)="impersonate('Lisa.Oliver@ey.com')">Lisa.Oliver&#64;ey.com</a>
+    <a class="user-link" (click)="impersonate('Johanna.Hermanussen')">Johanna.Hermanussen&#64;ey.com</a> 
+    <a class="user-link" (click)="impersonate('Kenneth.Abele@ey.com')">Kenneth.Abele&#64;ey.com</a>
+    <a class="user-link" (click)="impersonate('Aabid.Abbasi@ey.com')">Aabid.Abbasi&#64;ey.com</a> 
+    <a class="user-link" (click)="impersonate('Sergio.Garcia@mx.ey.com')">Sergio.Garcia&#64;ey.com</a> 
+    <a class="user-link" (click)="impersonate('David.Rivard@ey.com')">David.Rivard&#64;ey.com</a>
+  </div>
+  
+  <!-- Personnel Search -->
+  <div class="personnel-search">
+    <input
+      type="text"
+      class="search-input"
+      [(ngModel)]="searchText"
+      (keyup)="search(searchText)"
+      placeholder="Type to search"
+    />
+    
+    <!-- Search Progress Text -->
+    <div *ngIf="isSearching" class="search-progress-container">
+      Searching...
+    </div>
+    
+    <ul *ngIf="(personnel$ | async) as personnelList">
+      <li
+        class="personnel-item"
+        *ngFor="let personnel of personnelList"
+        (click)="onPersonnelSelected(personnel)"
+      >
+        {{ personnel.FirstName }} {{ personnel.LastName }} - {{ personnel.Email }}
+      </li>
+    </ul>
+
+    <ng-template #noResults>
+      <p>No results found for your search.</p>
+    </ng-template>
+  </div>
+  
+  <!-- Selected User -->
+  <div class="mt-2" *ngIf="toImpersonate.GUI">
+    <h5>Selected User:</h5>
+    <p>
+      <strong>Name:</strong> {{ toImpersonate.FirstName }} {{ toImpersonate.LastName }}<br />
+      <strong>GUI:</strong> {{ toImpersonate.GUI }}<br />
+      <strong>Email:</strong> {{ toImpersonate.Email }}
+    </p>
+    <button class="action-btn" (click)="impersonate( toImpersonate.Email)">Impersonate</button>
+  </div>
+</div>

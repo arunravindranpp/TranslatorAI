@@ -1,1 +1,49 @@
-<app-translation></app-translation> 
+<div class="container mt-4">
+    <ul class="nav nav-tabs" id="appTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button 
+          class="nav-link active" 
+          id="translation-tab" 
+          data-bs-toggle="tab" 
+          data-bs-target="#translation" 
+          type="button" 
+          role="tab" 
+          aria-controls="translation" 
+          aria-selected="true">
+          Translation
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button 
+          class="nav-link" 
+          id="chat-tab" 
+          data-bs-toggle="tab" 
+          data-bs-target="#chat" 
+          type="button" 
+          role="tab" 
+          aria-controls="chat" 
+          aria-selected="false">
+          Chat
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="appTabsContent">
+      <!-- Translation Tab -->
+      <div 
+        class="tab-pane fade show active" 
+        id="translation" 
+        role="tabpanel" 
+        aria-labelledby="translation-tab">
+        <app-translation></app-translation>
+      </div>
+  
+      <!-- Chat Tab -->
+      <div 
+        class="tab-pane fade" 
+        id="chat" 
+        role="tabpanel" 
+        aria-labelledby="chat-tab">
+        <app-chat></app-chat>
+      </div>
+    </div>
+  </div>
